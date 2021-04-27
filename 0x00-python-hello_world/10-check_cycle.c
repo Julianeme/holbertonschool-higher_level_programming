@@ -13,8 +13,8 @@ int check_cycle(listint_t *list)
 {
 	listint_t *fast_ptr = NULL, *slow_ptr = NULL;
 
-	*fast_ptr = list;
-	*slow_ptr = list;
+	*fast_ptr = *list;
+	*slow_ptr = *list;
 
 	if (!list || !list->next)
 		return (0);
