@@ -13,5 +13,5 @@ elif last_digit == 0:
 is 0".format(number, last_digit))
 else:
     print(
-        "Last digit of {:d} is {:d} and is less\
+        "Last digit of {:d} is {:d} and is less \
 than 6 and not 0".format(number, last_digit))
