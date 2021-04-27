@@ -8,10 +8,6 @@
  * Return: 0 if there is no cycle, 1 if there is a cycle
  */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include "lists.h"
-
 int check_cycle(listint_t *list)
 {
 	listint_t *fast_ptr, *slow_ptr;
