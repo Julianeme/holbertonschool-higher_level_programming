@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 def islower(c):
-    ord(c)
-    if (c >= 97 or c < 123):
-        return(true)
+    x = ord(c)
+    if ((x >= 97) or (x < 123)):
+        return(True)
     else:
-        return(false)
+        return(False)
