@@ -19,6 +19,9 @@ int check_cycle(listint_t *list)
 	fast_ptr = list->next;
 	slow_ptr = list;
 
+	if (!list || list->next)
+		return (0);
+
 	while (fast_ptr && slow_ptr)
 	{
 		if ((fast_ptr == slow_ptr) &&)
