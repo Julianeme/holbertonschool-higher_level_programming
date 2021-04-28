@@ -1,29 +1,42 @@
-#include <stdlib.h>
-#include <string.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include "lists.h"
 
 /**
- * check_cycle - checks if there is a cycle in a singly linked list
- * @list: singly linked list to be checked
- * Return: 0 if there is no cycle, 1 if there is a cycle
+ * listint_t *insert_node - inserts a number into a sorted linked list
+ * @head: a double pointer to the head of the linked list
+ * @number: number to be insterd
+ * Return: a pointer to the new node
  */
 
-int check_cycle(listint_t *list)
+listint_t *insert_node(listint_t **head, int number)
 {
-	listint_t *fast_ptr = NULL, *slow_ptr = NULL;
+	listint_t *temp = *head, *newnode = NULL;
 
-	fast_ptr = list;
-	slow_ptr = list;
+	newnode = malloc(sizeof(listint_t));
+	if (!newnode)
+		return (NULL);
+	newnode->n = number;
 
-	if (!list || !list->next)
-		return (0);
-	while (fast_ptr && fast_ptr->next && slow_ptr)
+	if ((newnode->n) <= (temp->n))
 	{
-		fast_ptr = fast_ptr->next->next;
-		slow_ptr = slow_ptr->next;
-		if (fast_ptr == slow_ptr)
-			return (1);
+		newnode->next = *head;
+		*head = newnode;
+		return (newnode);
 	}
-	return (0);
+	else
+	{
+		while (!temp || !(temp->next))
+		{
+			if ((newnode->n >= temp->n) && (newnode->n <= temp->next->n))
+			{
+				newnode->next = temp->next;
+				temp->next = newnode;
+				return (newnode);
+			}
+			else
+				temp = temp->next;
+		}
+	}
+	return (newnode);
 }
