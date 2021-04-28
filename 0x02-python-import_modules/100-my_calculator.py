@@ -11,9 +11,9 @@ if __name__ == "__main__":
         print("{} + {} = {}".format(a, b, add(a, b)))
     elif sys.argv[2] == chr(45):
         print("{} - {} = {}".format(a, b, sub(a, b)))
-    elif sys.argv[2] == char(42):
+    elif sys.argv[2] == chr(42):
         print("{} * {} = {}".format(a, b, mul(a, b)))
-    elif sys.argv[2] == char(47):
+    elif sys.argv[2] == chr(47):
         print("{} / {} = {}".format(a, b, div(a, b)))
     else:
         print("Unknown operator. Available operators: +, -, * and /")
