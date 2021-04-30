@@ -1,4 +1,5 @@
 #include "lists.h"
+#include <stdio.h>
 
 /**
  * get_dnodeint_at_index - returns the data of the nth node of
@@ -18,8 +19,10 @@ dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 	temp = head;
 	while (i < index)
 	{
-		if (!temp || (temp->next == NULL && i < index))
+		if (temp->next == NULL && i !=  index - 1)
+		{
 			return (NULL);
+		}
 		temp = temp->next;
 		i++;
 	}
