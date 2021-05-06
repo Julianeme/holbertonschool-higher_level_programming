@@ -21,6 +21,5 @@ void free_listint(listint_t *head);
 
 int is_palindrome(listint_t **head);
 size_t list_len(const listint_t *h);
-int _strcmp(char *s1, char *s2);
 
 #endif /* LISTS_H */
