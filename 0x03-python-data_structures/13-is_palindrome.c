@@ -27,32 +27,29 @@ size_t list_len(const listint_t *h)
 
 int is_palindrome(listint_t **head)
 {
-	int l_length = 0, i = 0, j = 0;
-	int a[1000], b[1000];
-	listint_t *temp = *head;
+	int l_length = 0, i = 0, j = 0, l = 0;
+	listint_t *temp = *head, *aux = *head, *cpy = *head;
 
 	if (*head == NULL)
 		return (1);
 	l_length = list_len(*head);
-
-	while (i < l_length)
-	{
-		a[i] = temp->n;
-		temp = temp->next;
-		i++;
-	}
-	i--;
-	while (i >= 0)
-	{
-		b[j] = a[i];
-		i--;
-		j++;
-	}
+	j = l_length;
+	l = j;
 	i = 0;
-	while (i < l_length)
+	j = 1;
+	while (i < l_length / 2)
 	{
-		if (a[i] != b[i])
+		temp = cpy;
+		while (j < l)
+		{
+			temp = temp->next;
+			j++;
+		}
+		j = 1;
+		l = l - 1;
+		if (aux->n != temp->n)
 			return (0);
+		aux = aux->next;
 		i++;
 	}
 	return (1);
