@@ -51,8 +51,6 @@ int is_palindrome(listint_t **head)
 	i = 0;
 	while (i < l_length)
 	{
-		printf("a[%d) = %d\n", i, a[i]);
-		printf("b[%d) = %d\n", i, b[i]);
 		if (a[i] != b[i])
 			return (0);
 		i++;
