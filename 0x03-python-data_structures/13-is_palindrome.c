@@ -52,7 +52,7 @@ int _strcmp(char *s1, char *s2)
 
 int is_palindrome(listint_t **head)
 {
-	int l_length = 0, i = 0, j = 0;
+	int l_length = 0, i = 0, j = 0, c = 0;
 	char *a = NULL, *b = NULL;
 	listint_t *temp = *head;
 
@@ -66,6 +66,7 @@ int is_palindrome(listint_t **head)
 	b = malloc(sizeof(char) * l_length + 1);
 	if (!b)
 		return (-1);
+	free(a);
 	while (i < l_length)
 	{
 		a[i] = temp->n;
@@ -81,7 +82,10 @@ int is_palindrome(listint_t **head)
 		j++;
 	}
 	b[j] = 00;
-	if (_strcmp(a, b) == 0)
+	c = _strcmp(a, b);
+	free(a);
+	free(b);
+	if (c == 0)
 		return (1);
 	else
 		return (0);
