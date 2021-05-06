@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <limits.h>
 #include "lists.h"
 
 /**
@@ -27,29 +28,32 @@ size_t list_len(const listint_t *h)
 
 int is_palindrome(listint_t **head)
 {
-	int l_length = 0, i = 0, j = 0, l = 0;
-	listint_t *temp = *head, *aux = *head;
+	int l_length = 0, i = 0, j;
+	listint_t *temp = *head;
+	int array[BUFSIZ];
 
 	if (*head == NULL)
 		return (1);
 	l_length = list_len(*head);
 	j = l_length;
-	l = j;
+	while (i < j)
+	{
+		array[i] = temp->n;
+		temp = temp->next;
+		i++;
+	}
+	temp = *head;
 	i = 0;
-	j = 1;
 	while (i < l_length / 2)
 	{
-		temp = *head;
-		while (j < l)
+		printf("array[%d] =  %d   ---  temp->next = %d\n", i, array[i], temp->n);
+		if (temp->n != array[j - 1])
 		{
-			temp = temp->next;
-			j++;
-		}
-		j = 1;
-		l = l - 1;
-		if (aux->n != temp->n)
+			printf("array[%d] =  %d   ---  temp->next = %d\n", i, array[i], temp->n);
 			return (0);
-		aux = aux->next;
+		}
+		temp = temp->next;
+		j--;
 		i++;
 	}
 	return (1);
