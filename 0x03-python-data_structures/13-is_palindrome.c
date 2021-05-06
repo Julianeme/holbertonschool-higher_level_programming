@@ -46,12 +46,8 @@ int is_palindrome(listint_t **head)
 	i = 0;
 	while (i < l_length / 2)
 	{
-		printf("array[%d] =  %d   ---  temp->next = %d\n", i, array[i], temp->n);
 		if (temp->n != array[j - 1])
-		{
-			printf("array[%d] =  %d   ---  temp->next = %d\n", i, array[i], temp->n);
 			return (0);
-		}
 		temp = temp->next;
 		j--;
 		i++;
