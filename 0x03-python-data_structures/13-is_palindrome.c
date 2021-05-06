@@ -22,6 +22,29 @@ size_t list_len(const listint_t *h)
 }
 
 /**
+ * _strcmp - compares two strings
+ *
+ *@s1: string 1 to be compared
+ *@s2: string 2 to be compared
+ *Return: always -15, 0 or 15
+ */
+
+int _strcmp(char *s1, char *s2)
+{
+	int x = 0;
+
+	while (s1[x] == s2[x])
+	{
+		x++;
+		if (s1[x] == '\0')
+		{
+			return (0);
+		}
+	}
+	return (s1[x] - s2[x]);
+}
+
+/**
  * is_palindrome - checks if a linked list is palindrome
  * @head: a double pointer to the first element of the list
  * Return: 1 if palindrome, 0 if not
@@ -50,13 +73,15 @@ int is_palindrome(listint_t **head)
 		i++;
 	}
 	a[i] = 00;
+	i--;
 	while (i >= 0)
 	{
 		b[j] = a[i];
 		i--;
 		j++;
 	}
-	if (strcmp(a, b) == 0)
+	b[j] = 00;
+	if (_strcmp(a, b) == 0)
 		return (1);
 	else
 		return (0);
