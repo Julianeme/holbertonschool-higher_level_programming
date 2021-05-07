@@ -4,6 +4,8 @@ def roman_to_int(roman_string):
     total = 0
     j = 1
     i = 0
+    if roman_string is None or type(roman_string) != str:
+        return(0)
     if len(roman_string) == 1:
         return(r_num[roman_string[i]])
     for i in range(0, len(roman_string)):
