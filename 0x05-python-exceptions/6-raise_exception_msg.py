@@ -1,5 +1,5 @@
 def raise_exception_msg(message=""):
     try:
-        raise (TypeError)
+        raise (NameError)
     except:
         print("{}".format(message))
