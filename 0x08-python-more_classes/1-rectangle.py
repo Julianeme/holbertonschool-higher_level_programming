@@ -6,14 +6,18 @@ class Rectangle:
     '''Just defining an empty class to start building it step by step!!!!!'''
 
     def __init__(self, width=0, height=0):
+        '''contructor for width and height'''
         self.width = width
         self.height = height
 
         @property
+        '''getter'''
         def width(self):
+
             return self.__width
 
         @width.setter
+        '''setter, checks for the right tipe of widht'''
         def width(self, value):
             if type(value) is int:
                 self.__width = value
@@ -23,10 +27,12 @@ class Rectangle:
                 raise ValueError("width must be >= 0")
 
         @property
+        '''getter for height, private'''
         def height(self):
             return self.__height
 
         @height.setter
+        '''checks that height has a valid value'''
         def height(self, value):
             if type(value) is int:
                 self.__height = value
