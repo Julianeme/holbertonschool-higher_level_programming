@@ -4,7 +4,6 @@
 
 class Rectangle:
     '''Just defining an empty class to start building it step by step!!!!!'''
-
     def __init__(self, width=0, height=0):
         '''contructor for width and height'''
         self.width = width
