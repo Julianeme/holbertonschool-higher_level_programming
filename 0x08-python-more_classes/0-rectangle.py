@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-'''you just work this fucking time!!!!'''
+'''Gonna start building a class Rectangle step by step!!!!'''
 
 
-class Square:
-    '''a fucking empty class, hope this shit works!!!!!'''
+class Rectangle:
+    '''Just defining an empty class to start building it step by step!!!!!'''
     pass
