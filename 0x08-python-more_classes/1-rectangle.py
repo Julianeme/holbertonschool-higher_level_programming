@@ -11,14 +11,13 @@ class Rectangle:
         self.height = height
 
         @property
-        '''getter'''
         def width(self):
-
+            '''getter'''
             return self.__width
 
         @width.setter
-        '''setter, checks for the right tipe of widht'''
         def width(self, value):
+            '''setter, checks for the right tipe of widht'''
             if type(value) is int:
                 self.__width = value
             elif type(value) is not int:
@@ -27,13 +26,13 @@ class Rectangle:
                 raise ValueError("width must be >= 0")
 
         @property
-        '''getter for height, private'''
         def height(self):
+            '''getter for height, private'''
             return self.__height
 
         @height.setter
-        '''checks that height has a valid value'''
         def height(self, value):
+            '''checks that height has a valid value'''
             if type(value) is int:
                 self.__height = value
             elif type(value) is not int:
