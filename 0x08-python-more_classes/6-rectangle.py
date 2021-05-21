@@ -5,6 +5,7 @@
 class Rectangle:
     '''Just defining an empty class to start building it step by step!!!!!'''
     number_of_instances = 0
+
     def __init__(self, width=0, height=0):
         '''contructor for width and height'''
         self.width = width
@@ -67,6 +68,4 @@ class Rectangle:
 
     def __del__(self):
         Rectangle.number_of_instances -= 1
-        if Rectangle.number_of_instances < 0:
-            Rectangle.number_of_instances = 0
         print("Bye rectangle...")
