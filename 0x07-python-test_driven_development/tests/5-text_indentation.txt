@@ -28,7 +28,15 @@ Now use it:
     ...
     NameError: name 'NONE' is not defined
 
-    >>> text_indentation("hola.", "alguien aqui")
+    >>> text_indentation('Holberton School')
+    Holberton School
+
+    >>> text_indentation('Uno.Dos')
+    Uno.
+    <BLANKLINE>
+    Dos
+
+    >>> text_indentation('hola.', 'alguien aqui')
     Traceback (most recent call last):
     ...
     TypeError: text_indentation() takes 1 positional argument but 2 were given
@@ -48,12 +56,16 @@ Now use it:
     >>> len(comments) > 2
     True
 
-    >>> text_indentation("hola.... alguien?")
+    >>> text_indentation('hola.... alguien?')
     hola.
     <BLANKLINE>
     .
     <BLANKLINE>
-     alguien?
+    .
+    <BLANKLINE>
+    .
+    <BLANKLINE>
+    alguien?
     <BLANKLINE>
     <BLANKLINE>
 
