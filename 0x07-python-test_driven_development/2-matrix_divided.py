@@ -14,7 +14,7 @@ def matrix_divided(matrix, div):
     new_matrix = []
     mess1 = "Each row of the matrix must have the same size"
     mess2 = "matrix must be a matrix (list of lists) of integers/floats"
-    if len(matrix) > 1:
+    if len(matrix) > 0:
         length_matrix = len(matrix[0])
 
     for row in range(len(matrix)):
