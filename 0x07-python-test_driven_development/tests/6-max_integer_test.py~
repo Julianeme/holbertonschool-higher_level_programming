@@ -1,0 +1,14 @@
+
+
+def max_integer(list=[]):#!/usr/bin/python3
+"""
+    Returns the concatenation of
+    first name and last name
+    only works with strings
+"""
+
+
+def text_indentation(text):
+    """
+        Returns the input matrix divided by div variable
+    """

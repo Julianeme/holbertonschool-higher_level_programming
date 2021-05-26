@@ -1,0 +1,103 @@
+The ``4-print_square.py`` module
+======================
+
+Using ``print_square``
+-------------------
+
+This is an example text file in reStructuredText format.  First import
+``print_square`` from the ``4-print_square`` module:
+
+    >>> print_square = __import__("4-print_square").print_square
+
+Now use it:
+
+    >>> print_square(3)
+    ###
+    ###
+    ###
+
+    >>> print_square(-3)
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be >= 0
+
+    >>> print_square('#')
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer
+
+    >>> print_square()
+    Traceback (most recent call last):
+    ...
+    TypeError: print_square() missing 1 required positional argument: 'size'
+
+    >>> print_square("")
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer
+
+    >>> print_square(NONE)
+    Traceback (most recent call last):
+    ...
+    NameError: name 'NONE' is not defined
+
+    #CHECK FOR PEP8 STYLE
+    >>> import os
+    >>> os.popen("pep8 4-print_square.py").read()
+    ''
+
+    >>> print_square(0)
+    
+
+    >>> print_square(3, 4)
+    Traceback (most recent call last):
+    ...
+    TypeError: print_square() takes 1 positional argument but 2 were given
+
+    >>> print_square(4.68)
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer
+
+    #CHECK FOR COMMENTS LENGHT OF THE SHEBANG
+    >>> comments = __import__("4-print_square").__doc__
+    >>> len(comments) > 4
+    True
+
+    #CHECK FOR FUNCTION COMMENTS LENGHT
+    >>> comments = __import__("4-print_square").print_square.__doc__
+    >>> len(comments) > 2
+    True
+
+    #CHECK IF README FILE EXISTS
+    >>> import os
+    >>> is_readme = os.getcwd() + '/README.md'
+    >>> os.path.exists(is_readme)
+    True
+
+    # CHECK IF FILE IS EXCECUTABLE
+    >>> import os
+    >>> path_file = os.getcwd() + '/4-print_square.py'
+    >>> os.access(path_file, os.X_OK)
+    True
+
+    #CHECK FOR SHEBANG
+    >>> with open("4-print_square.py", "r") as file:
+    ...     first_line = file.readline()
+    ...
+    >>> first_line == '#!/usr/bin/python3\n'
+    True
+
+    #CHECK FOR EMPTY LAST LINE
+    >>> with open("4-print_square.py", "r") as file:
+    ...     for last_line in file:
+    ...             pass
+    ...
+    >>> last_line [-1] == '\n'
+    True
+
+    #CHECK IF README IS NOT EMPTY
+    >>> import os
+    >>> is_readme = os.getcwd() + '/README.md'
+    >>> os.stat(is_readme).st_size == 0
+    False

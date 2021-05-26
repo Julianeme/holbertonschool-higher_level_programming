@@ -1,0 +1,88 @@
+The ``3-say_my_name.py`` module
+======================
+
+Using ``3-say_my_name.py``
+-------------------
+
+This is an example text file in reStructuredText format.  First import
+``say_my_name.py`` from the ``say_my_name.py`` module:
+
+    >>> say_my_name = __import__("3-say_my_name").say_my_name
+
+Now use it:
+
+    >>> say_my_name("Juan")
+    My name is Juan 
+
+    >>> say_my_name(4, "Smith")
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
+
+    >>> say_my_name("Sara", None)
+    Traceback (most recent call last):
+    ...
+    TypeError: last_name must be a string
+
+    >>> say_my_name("Smith", 4)
+    Traceback (most recent call last):
+    ...
+    TypeError: last_name must be a string
+
+    >>> say_my_name(, last_name="")
+    Traceback (most recent call last):
+    ...
+    SyntaxError: invalid syntax
+
+    >>> say_my_name([[12, 7], [76, 9]], 'hola')
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
+
+    #CHECK FOR PEP8 STYLE
+    >>> import os
+    >>> os.popen("pep8 3-say_my_name.py").read()
+    ''
+
+    #CHECK FOR COMMENTS LENGHT OF THE SHEBANG
+    >>> comments = __import__("3-say_my_name").__doc__
+    >>> len(comments) > 4
+    True
+
+    #CHECK FOR FUNCTION COMMENTS LENGHT
+    >>> comments = __import__("3-say_my_name").say_my_name.__doc__
+    >>> len(comments) > 2
+    True
+
+    #CHECK IF README FILE EXISTS
+    >>> import os
+    >>> is_readme = os.getcwd() + '/README.md'
+    >>> os.path.exists(is_readme)
+    True
+
+    # CHECK IF FILE IS EXCECUTABLE
+    >>> import os
+    >>> path_file = os.getcwd() + '/3-say_my_name.py'
+    >>> os.access(path_file, os.X_OK)
+    True
+
+    #CHECK FOR SHEBANG
+    >>> with open("3-say_my_name.py", "r") as file:
+    ...     first_line = file.readline()
+    ...
+    >>> first_line == '#!/usr/bin/python3\n'
+    True
+
+    #CHECK FOR EMPTY LAST LINE
+    >>> with open("3-say_my_name.py", "r") as file:
+    ...     for last_line in file:
+    ...             pass
+    ...
+    >>> last_line [-1] == '\n'
+    True
+
+    #CHECK IF README IS NOT EMPTY
+    >>> import os
+    >>> is_readme = os.getcwd() + '/README.md'
+    >>> os.stat(is_readme).st_size == 0
+    False

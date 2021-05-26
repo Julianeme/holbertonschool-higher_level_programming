@@ -1,0 +1,92 @@
+The ``2-matrix_divided.py`` module
+======================
+
+Using ``matrix_divided``
+-------------------
+
+This is an example text file in reStructuredText format.  First import
+``matrix_divided`` from the ``add_integer`` module:
+
+    >>> matrix_divided = __import__("2-matrix_divided").matrix_divided
+
+Now use it:
+
+    >>> matrix = [[1, 2, ], [3, 4, 5]]
+    >>> matrix_divided(matrix, 3)
+    Traceback (most recent call last):
+    ...
+    TypeError: Each row of the matrix must have the same size
+
+    >>> matrix_divided([[], [1, 2, 3]], 2)
+    Traceback (most recent call last):
+    ...
+    TypeError: Each row of the matrix must have the same size
+
+    >>> matrix_divided(, 2)
+    Traceback (most recent call last):
+    ...
+    SyntaxError: invalid syntax
+
+    >>> matrix_divided([[][]], 5)
+    Traceback (most recent call last):
+    ...
+    SyntaxError: invalid syntax
+
+    >>> matrix_divided([[1, 2][3, 4]], -5)
+    Traceback (most recent call last):
+    ...
+    TypeError: list indices must be integers or slices, not tuple
+
+    >>> matrix_divided([["test", 3][2, 4]], 2)
+    Traceback (most recent call last):
+    ...
+    TypeError: list indices must be integers or slices, not tuple
+
+
+    #CHECK FOR PEP8 STYLE
+    >>> import os
+    >>> os.popen("pep8 2-matrix_divided.py").read()
+    ''
+
+    #CHECK FOR COMMENTS LENGHT OF THE SHEBANG
+    >>> comments = __import__("2-matrix_divided").__doc__
+    >>> len(comments) > 4
+    True
+
+    #CHECK FOR FUNCTION COMMENTS LENGHT
+    >>> comments = __import__("2-matrix_divided").matrix_divided.__doc__
+    >>> len(comments) > 2
+    True
+
+    #CHECK IF README FILE EXISTS
+    >>> import os
+    >>> is_readme = os.getcwd() + '/README.md'
+    >>> os.path.exists(is_readme)
+    True
+
+    # CHECK IF FILE IS EXCECUTABLE
+    >>> import os
+    >>> path_file = os.getcwd() + '/2-matrix_divided.py'
+    >>> os.access(path_file, os.X_OK)
+    True
+
+    #CHECK FOR SHEBANG
+    >>> with open("2-matrix_divided.py", "r") as file:
+    ...     first_line = file.readline()
+    ...
+    >>> first_line == '#!/usr/bin/python3\n'
+    True
+
+    #CHECK FOR EMPTY LAST LINE
+    >>> with open("2-matrix_divided.py", "r") as file:
+    ...     for last_line in file:
+    ...             pass
+    ...
+    >>> last_line [-1] == '\n'
+    True
+
+    #CHECK IF README IS NOT EMPTY
+    >>> import os
+    >>> is_readme = os.getcwd() + '/README.md'
+    >>> os.stat(is_readme).st_size == 0
+    False
