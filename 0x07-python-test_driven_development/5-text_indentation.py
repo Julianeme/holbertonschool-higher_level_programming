@@ -12,6 +12,8 @@ def text_indentation(text):
     """
     aux = ""
     pos = 0
+    if type(text) is not str:
+        raise TypeError("text must be a string")
     while pos in range(len(text)):
         aux = aux + text[pos]
         if text[pos] == '.' or text[pos] == '?' or text[pos] == ':':
