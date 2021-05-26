@@ -16,12 +16,12 @@ Now use it:
     >>> text_indentation(665.47)
     Traceback (most recent call last):
     ...
-    TypeError: object of type 'float' has no len()
+    TypeError: text must be a string
 
     >>> text_indentation(55)
     Traceback (most recent call last):
     ...
-    TypeError: object of type 'int' has no len()
+    TypeError: text must be a string
 
     >>> text_indentation(NONE)
     Traceback (most recent call last):
