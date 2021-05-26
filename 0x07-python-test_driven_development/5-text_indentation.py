@@ -16,6 +16,7 @@ def text_indentation(text):
         aux = aux + text[pos]
         if text[pos] == '.' or text[pos] == '?' or text[pos] == ':':
             aux = aux + '\n\n'
-            pos += 1
+            if pos < (len(text) - 1) and text[(pos + 1)] == " ":
+                pos += 1
         pos += 1
     print(aux)
