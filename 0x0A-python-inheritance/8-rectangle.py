@@ -1,12 +1,14 @@
 #!/usr/bin/python3
 """
-    Returns the list of available attributes and methods of an object
-
-
+    Returns the result dividing each value of matrix
+    by the div value. works only with integers and floats
+    div value should be diff than zero
 """
 
 class BaseGeometry:
-    '''Just defining an empty class to start building it step by step!!!!!'''
+    """
+        Returns the input matrix divided by div variable
+    """
 
     def area(self):
         raise Exception("area() is not implemented")
@@ -18,7 +20,9 @@ class BaseGeometry:
             raise ValueError("{} must be greater than 0".format(name))
 
 class Rectangle (BaseGeometry):
-    '''Just defining an empty class to start building it step by step!!!!!'''
+    """
+        Returns the input matrix divided by div variable
+    """
 
     def __init__(self, width, height):
 
