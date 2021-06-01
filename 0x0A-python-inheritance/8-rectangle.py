@@ -1,15 +1,15 @@
 #!/usr/bin/python3
 """
-    Returns the result dividing each value of matrix
-    by the div value. works only with integers and floats
-    div value should be diff than zero
+    Base class BaseGeometry and and subclass Rectangle
+
+
 """
+
 
 class BaseGeometry:
     """
-        Returns the input matrix divided by div variable
+    Base class for geomtry which checks input values
     """
-
     def area(self):
         raise Exception("area() is not implemented")
 
@@ -19,9 +19,11 @@ class BaseGeometry:
         elif value <= 0:
             raise ValueError("{} must be greater than 0".format(name))
 
+
 class Rectangle (BaseGeometry):
     """
-        Returns the input matrix divided by div variable
+        using inheritance to check for valid input values
+
     """
 
     def __init__(self, width, height):
@@ -31,8 +33,3 @@ class Rectangle (BaseGeometry):
 
         self.__width = width
         self.__height = height
-
-
-
-
-
