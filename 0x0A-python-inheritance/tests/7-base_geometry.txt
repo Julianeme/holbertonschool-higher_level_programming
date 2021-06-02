@@ -53,6 +53,7 @@ Now use it:
     True
 
     #CHECK FOR FUNCTION COMMENTS LENGHT
-    >>> comments = __import__("7-base_geometry").base_geometry.__doc__
-    >>> len(comments) > 2
+    >>> import re
+    >>>	comments = (BaseGeometry.__doc__)
+    >>> len(comments.splitlines()) > 2
     True
