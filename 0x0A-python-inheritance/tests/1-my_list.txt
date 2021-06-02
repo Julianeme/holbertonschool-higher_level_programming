@@ -43,3 +43,24 @@ Now use it:
     >>> my_list.print_sorted()
     [-0.584, 1, 2, 3, 4, 5, 123456789123]
 
+    #CHECK FOR SHEBANG
+    >>> with open("1-my_list.py", "r") as file:
+    ...     first_line = file.readline()
+    ...
+    >>> first_line == '#!/usr/bin/python3\n'
+    True
+
+    #CHECK FOR PEP8 STYLE
+    >>> import os
+    >>> os.popen("pep8 1-my_list.py").read()
+    ''
+
+    #CHECK FOR COMMENTS LENGHT OF THE SHEBANG
+    >>> comments = __import__("1-my_list").__doc__
+    >>> len(comments) > 4
+    True
+
+    #CHECK FOR FUNCTION COMMENTS LENGHT
+    >>> comments = __import__("1-my_list").MyList.__doc__
+    >>> len(comments) > 2
+    True
