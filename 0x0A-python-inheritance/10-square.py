@@ -8,6 +8,10 @@ Rectangle = __import__('9-rectangle').Rectangle
 
 
 class Square (Rectangle):
+    """
+        instances area and str magic funtions added
+
+    """
 
     def __init__(self, size):
         super().__init__(size, size)
