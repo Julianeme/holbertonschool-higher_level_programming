@@ -4,7 +4,6 @@
 
 
 """
-import os
 
 
 def read_file(filename=""):

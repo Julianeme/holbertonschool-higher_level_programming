@@ -4,7 +4,6 @@
 
 
 """
-import os
 
 
 def write_file(filename="", text=""):
