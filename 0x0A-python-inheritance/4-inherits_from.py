@@ -10,6 +10,6 @@ def inherits_from(obj, a_class):
     """
     Returns the list of available attributes and methods of an object
     """
-    if str(type(obj)) == "<type a_class>":
+    if issubclass(type(obj), a_class) and type(obj) != a_class:
         return True
     return False
