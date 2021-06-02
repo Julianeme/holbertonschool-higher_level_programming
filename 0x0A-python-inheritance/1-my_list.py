@@ -7,9 +7,9 @@
 
 
 class MyList(list):
+    """
+    Returns the list of available attributes and methods of an object
+    """
 
     def print_sorted(self):
-        """
-        Returns the list of available attributes and methods of an object
-        """
         print(sorted(self))
