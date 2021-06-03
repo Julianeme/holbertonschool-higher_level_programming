@@ -8,7 +8,6 @@
 class MyInt(int):
     """
     equals and diff works the other way around
-
     """
     def __eq__(self, num):
         self.num = num
