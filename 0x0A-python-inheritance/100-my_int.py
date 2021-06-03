@@ -11,5 +11,4 @@ class MyInt(int):
     equals and diff works the other way around
     """
     def __opos__(self, num):
-        if self == num:
             return False
