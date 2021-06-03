@@ -12,8 +12,10 @@ class MyInt(int):
     """
     def __eq__(self, num):
         self.num = num
-        return self.num != num
+        if self.num != num:
+            return True
 
     def __opos__(self, num):
         self.num = num
-        return self.num == num
+        if self.num == num:
+            return False
