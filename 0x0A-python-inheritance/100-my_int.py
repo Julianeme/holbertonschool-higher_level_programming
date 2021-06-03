@@ -2,7 +2,6 @@
 """
     Class MyInt derived from int
 
-
 """
 
 
@@ -10,5 +9,7 @@ class MyInt(int):
     """
     equals and diff works the other way around
     """
-    def __bol__(self):
-        return False
+    def __bol__(self, num):
+        self.num = num
+        num += 1
+        return num
