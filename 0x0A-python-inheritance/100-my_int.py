@@ -10,8 +10,10 @@ class MyInt(int):
     equals and diff works the other way around
 
     """
-    def __bol__(self, num):
+    def __eq__(self, num):
         self.num = num
-        if type(num) is int:
-            return(False)
-        return(True)
+        return self.num != num
+
+    def __opos__(self, num):
+        self.num = num
+        return self.num == num
