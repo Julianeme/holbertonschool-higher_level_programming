@@ -13,4 +13,4 @@ def class_to_json(obj):
     Checks and verifications only for a base class
 
     """
-    return(json.loads(obj))
+    return(obj.__dict__)
