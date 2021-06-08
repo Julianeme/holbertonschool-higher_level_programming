@@ -7,7 +7,6 @@
 import json
 
 
-
 class Base:
     '''Base class for the project!!!!'''
     __nb_objects = 0
@@ -59,4 +58,3 @@ class Base:
             a_inst = cls(1)
         a_inst.update(**dictionary)
         return a_inst
-

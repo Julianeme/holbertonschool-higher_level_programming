@@ -96,7 +96,6 @@ class Rectangle(Base):
 
     def __str__(self):
         '''str magic method returns the characteristics of the rectangl'''
-        prints in stdout the Rectangle instance with the character #
         return '[Rectangle] ({}) {}/{} - {}/{}'.format(
             self.id, self.x, self.y, self.width, self.height)
 
