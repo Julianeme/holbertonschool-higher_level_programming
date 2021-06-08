@@ -12,6 +12,9 @@ class Rectangle(Base):
     id: is inherited from the Base superclass
     """
     def __init__(self, width, height, x=0, y=0, id=None):
+        """
+        width, height, dimensions of rectangle - x, y, offsets
+        """
         super().__init__(id)
         self.width = width
         self.height = height
