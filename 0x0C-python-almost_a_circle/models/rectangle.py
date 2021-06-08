@@ -107,7 +107,7 @@ class Rectangle(Base):
         if len(args) > 0:
             for index, word in enumerate(args):
                 if index == 0:
-                    self.index = word
+                    self.id = word
                 if index == 1:
                     self.width = word
                 if index == 2:
