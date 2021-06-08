@@ -43,7 +43,7 @@ class Base:
             list_dic = []
         with open(cls.__name__ + '.json', mode="w",
                   encoding="UTF8") as my_file:
-            return(my_file.write(Base.to_json_string(list_dic)))
+            return(my_file.write(cls.to_json_string(list_dic)))
 
     @staticmethod
     def from_json_string(json_string):
@@ -61,3 +61,17 @@ class Base:
             a_inst = cls(1)
         a_inst.update(**dictionary)
         return a_inst
+
+    @classmethod
+    def load_from_file(cls):
+        file_name = cls.__name__ + '.json'
+        list_f = []
+        try:
+            l_list = []
+            with open(file_name, 'r', encoding="UTF8") as f:
+                l_list = cls.from_json_string(f.read())
+                for i in range(len(l_list)):
+                    list_f.append(cls.create(**l_list[i]))
+        except:
+            list_f = []
+        return list_f
