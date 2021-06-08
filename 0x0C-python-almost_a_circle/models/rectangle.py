@@ -20,10 +20,12 @@ class Rectangle(Base):
 
     @property
     def width(self):
+        '''getter'''
         return self.__width
 
     @width.setter
     def width(self, wide):
+        '''setter, checks for the right type of widht'''
         if type(wide) is not int:
             raise TypeError("width must be an integer")
         elif wide <= 0:
@@ -33,10 +35,12 @@ class Rectangle(Base):
 
     @property
     def height(self):
+        '''getter'''
         return self.__height
 
     @height.setter
     def height(self, high):
+        '''setter, checks for the right type of height'''
         if type(high) is not int:
             raise TypeError("height must be an integer")
         elif high <= 0:
@@ -46,10 +50,12 @@ class Rectangle(Base):
 
     @property
     def x(self):
+        '''getter'''
         return self.__x
 
     @x.setter
     def x(self, xs):
+        '''setter, checks for the right type of x offset'''
         if type(xs) is not int:
             raise TypeError("x must be an integer")
         elif xs < 0:
@@ -59,10 +65,12 @@ class Rectangle(Base):
 
     @property
     def y(self):
+        '''getter'''
         return self.__y
 
     @y.setter
     def y(self, ys):
+        '''setter, checks for the right type of y offset'''
         if type(ys) is not int:
             raise TypeError("y must be an integer")
         elif ys < 0:
@@ -71,9 +79,11 @@ class Rectangle(Base):
             self.__y = ys
 
     def area(self):
+        '''returns the area of a rectangle'''
         return (self.height * self.width)
 
     def display(self):
+        '''prints in stdout the Rectangle instance with the character #'''
         if self.height == 0 or self.width == 0:
             print()
         else:
@@ -85,10 +95,13 @@ class Rectangle(Base):
                 print()
 
     def __str__(self):
+        '''str magic method returns the characteristics of the rectangl'''
+        prints in stdout the Rectangle instance with the character #
         return '[Rectangle] ({}) {}/{} - {}/{}'.format(
             self.id, self.x, self.y, self.width, self.height)
 
     def update(self, *args, **kwargs):
+        '''updates the attributes of the rectangle from terminal'''
         if len(args) > 0:
             for index, word in enumerate(args):
                 if index == 0:
@@ -114,5 +127,6 @@ class Rectangle(Base):
                 self.y = kwargs['y']
 
     def to_dictionary(self):
+        ''' returns the dictionary representation of a Rectangle'''
         return {'id': self.id, 'width': self.width, 'height': self.height,
                 'x': self.x, 'y': self.y}
