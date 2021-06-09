@@ -4,6 +4,7 @@
 
 
 """
+import csv
 import json
 
 
@@ -64,6 +65,7 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
+        '''returns a list of instances:'''
         file_name = cls.__name__ + '.json'
         list_f = []
         try:
