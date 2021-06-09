@@ -6,7 +6,9 @@ from models.base import Base
 
 
 class Test_Base(unittest.TestCase):
+    """Test class"""
     def test_id(self):
+        """test empty and given id"""
         b1 = Base()
         self.assertEqual(b1.id, 1)
 
@@ -15,3 +17,5 @@ class Test_Base(unittest.TestCase):
 
         b3 = Base()
         self.assertEqual(b3.id, 2)
+
+
