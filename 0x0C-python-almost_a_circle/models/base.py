@@ -75,3 +75,31 @@ class Base:
         except:
             list_f = []
         return list_f
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        '''serializes and in CSV'''
+        list_dic = []
+        if list_objs is not None:
+            for element in list_objs:
+                list_dic.append(cls.to_dictionary(element))
+        else:
+            list_dic = []
+        with open(cls.__name__ + '.cvs', mode="w",
+                  encoding="UTF8") as my_file:
+            return(my_file.write(cls.to_json_string(list_dic)))
+
+    @classmethod
+    def load_from_file_csv(cls):
+        '''deserializes from CSV'''
+        file_name = cls.__name__ + '.cvs'
+        list_f = []
+        try:
+            l_list = []
+            with open(file_name, 'r', encoding="UTF8") as f:
+                l_list = cls.from_json_string(f.read())
+                for i in range(len(l_list)):
+                    list_f.append(cls.create(**l_list[i]))
+        except:
+            list_f = []
+        return list_f
