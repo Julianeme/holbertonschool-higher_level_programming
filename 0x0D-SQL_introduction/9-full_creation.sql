@@ -2,7 +2,7 @@
 -- in your MySQL server and add multiples rows.
 
 CREATE TABLE IF NOT EXISTS second_table (id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-name VARCHAR(256) score INT);
+name VARCHAR(256), score INT);
 INSERT INTO `second_table` (`id`,`name`,`score`) VALUES (1, "John", 10);
  (`id`,`name`,`score`) VALUES (2, "Alex", 3);
  (`id`,`name`,`score`) VALUES (3, "Bob", 14);
