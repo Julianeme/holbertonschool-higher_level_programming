@@ -1,5 +1,5 @@
 -- script that lists all the cities of California that can be
-SELECT id, name 
+SELECT id, name
 FROM cities
 WHERE states_id =
 	(SELECT id
