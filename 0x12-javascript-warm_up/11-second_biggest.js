@@ -1,19 +1,27 @@
 #!/usr/bin/node
 
-const args = process.argv;
-let biggest = process.argv[2];
-let secondBiggest = process.argv[2];
-if (args.length > 3) {
-  for (let i = 2; i < args.lenght; i++) {
-    if (biggest > args[i]) {
-      biggest = args[i];
-    }
-  } for (let j = 2; j < args.lenght; j++) {
-    if (secondBiggest > args[j] && secondBiggest < biggest) {
-      secondBiggest = args[j];
+function nextBiggest (arr) {
+  let max = -Infinity; let result = -Infinity;
+
+  for (const value of arr) {
+    const nr = Number(value);
+
+    if (nr > max) {
+      [result, max] = [max, nr]; // save previous max
+    } else if (nr < max && nr > result) {
+      result = nr; // new second biggest
     }
   }
-} else {
-  secondBiggest = 0;
+
+  return result;
 }
-console.log(secondBiggest);
+
+if (process.argv.length <= 3) {
+  console.log(0);
+} else {
+  const newArray = [];
+  for (let i = 2; i < process.argv.length; i++) {
+    newArray[i] = process.argv[i];
+  }
+  console.log(nextBiggest(newArray));
+}
