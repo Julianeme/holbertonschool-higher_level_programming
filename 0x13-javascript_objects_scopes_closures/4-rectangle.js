@@ -19,19 +19,15 @@ module.exports = class Rectangle {
 
   rotate () {
     /* exchanges the width and the height of the rectangle */
-    let high = 0;
-    while (high < this.width) {
-      console.log('X'.repeat(this.height));
-      high += 1;
-    }
+    let tmp;
+    tmp = this.height;
+    this.height = this.width;
+    this.width = tmp;
   }
 
   double () {
     /* multiples the width and the height of the rectangle by 2 */
-    let high = 0;
-    while (high < (2 * this.height)) {
-      console.log('X'.repeat((2 * this.width)));
-      high += 1;
-    }
+    this.width *= 2;
+    this.height *= 2;
   }
-};
+}
