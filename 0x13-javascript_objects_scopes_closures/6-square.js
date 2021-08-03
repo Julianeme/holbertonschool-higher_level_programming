@@ -12,8 +12,8 @@ module.exports = class Square extends Rectangle {
     let pattern = 'C';
     if (c !== 'c' && c !== 'C') {
       pattern = 'X';
-    } while (side < this.width) {
-      console.log(pattern.repeat(this.width));
+    } while (side < this.height) {
+      console.log(pattern.repeat(this.height));
       side += 1;
     }
   }
