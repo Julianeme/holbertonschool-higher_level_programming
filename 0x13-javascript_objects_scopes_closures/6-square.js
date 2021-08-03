@@ -9,11 +9,11 @@ module.exports = class Square extends Rectangle {
 
   charPrint (c) {
     let side = 0;
-    let pattern = 'C';
+    this.pattern = c;
     if (c !== 'c' && c !== 'C') {
-      pattern = 'X';
+      this.pattern = 'X';
     } while (side < this.width) {
-      console.log(pattern.repeat(this.width));
+      console.log(this.pattern.repeat(this.width));
       side += 1;
     }
   }
