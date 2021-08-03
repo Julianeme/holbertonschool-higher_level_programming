@@ -1,7 +1,8 @@
 #!/usr/bin/node
 /* class Square that defines a square and inherits from Rectangle of 4-rectangle.js */
 
-module.exports = class Square extends require('./5-rectangle') {
+const Rectangle = require('./5-square');
+module.exports = class Square extends Rectangle {
   constructor (size) {
     super(size, size);
   }
