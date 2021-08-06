@@ -14,8 +14,8 @@ if __name__ == "__main__":
 
     try:
         # Execute the SQL command
-        cursor.execute("SELECT * FROM states WHERE name \
-                       LIKE'{:s}' ORDER BY id". format(argv[4]))
+        cursor.execute("SELECT * FROM states WHERE name LIKE %s ORDER BY id",
+                       (argv[4],))
         # Fetch all the rows in a list of lists.
         results = cursor.fetchall()
         for row in results:
