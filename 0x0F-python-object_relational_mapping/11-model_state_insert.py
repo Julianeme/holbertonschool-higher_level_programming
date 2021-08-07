@@ -29,6 +29,5 @@ if __name__ == "__main__":
 
     # SELECT * FROM State, states with name = Lousiana
     st = session.query(State).filter(State.name == 'Louisiana').first()
-    print("{}".format(st.name))
-    session.close()
+    print("{}".format(st.id))
     session.close()
