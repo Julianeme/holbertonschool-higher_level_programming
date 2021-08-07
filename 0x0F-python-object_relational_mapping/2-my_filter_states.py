@@ -18,12 +18,12 @@ if __name__ == "__main__":
 
     try:
         # Execute the SQL command
-        cursor.execute("SELECT * FROM states ORDER BY id")
+        cursor.execute("SELECT * FROM states WHERE name LIKE BINARY {} ORDER BY id".
+                       format (argv[4]))
         # Fetch all the rows in a list of lists.
         results = cursor.fetchall()
         for row in results:
-            if row[1] == argv[4]:
-                print(row)
+            print(row)
     except:
         print("Error: unable to fecth data")
 
