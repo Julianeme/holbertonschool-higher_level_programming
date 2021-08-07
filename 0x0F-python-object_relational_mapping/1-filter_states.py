@@ -15,15 +15,14 @@ if __name__ == "__main__":
     # prepare a cursor object using cursor() method
     cursor = db.cursor()
 
-    sql = "SELECT * FROM states ORDER BY id"
+    sql = "SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id"
     try:
         # Execute the SQL command
         cursor.execute(sql)
         # Fetch all the rows in a list of lists.
         results = cursor.fetchall()
         for row in results:
-            if row[1][0] == 'N':
-                print(row)
+            print(row)
     except:
         print("Error: unable to fecth data")
 
