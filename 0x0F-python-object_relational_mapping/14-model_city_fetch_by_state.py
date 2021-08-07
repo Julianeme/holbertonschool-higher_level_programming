@@ -19,7 +19,7 @@ if __name__ == "__main__":
     # Session maker instance
     Session = sessionmaker(eng)
     session = Session()
-    # SELECT * FROM State and order by id
+    # SELECT * FROM City and State, usign ForeingKey and ordering by city id
     st_cities = session.query(City, State).filter(City.state_id == State.id)\
                        .order_by(City.id).all()
     for cities, states in st_cities:
