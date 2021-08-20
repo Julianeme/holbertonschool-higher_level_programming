@@ -1,4 +1,4 @@
-#!/usr/Defbin/python3
+#!/usr/bin/python3
 """
 finds first peak in list
 """
