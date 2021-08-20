@@ -10,14 +10,15 @@ from sys import argv
 
 if __name__ == "__main__":
 
-    data = {'key': 'value'}
+    data = {'q': ""}
     q = ""
     if len(argv) > 1:
-        q = "/"+ argv[1]
-    req = requests.post("http://0.0.0.0:5000/search_user" + q, data)
-    if type(req.text) == dict and req.text is not None:
-        print("[{}] {}: {}".format(req.text[id], req.text[name]))
-    elif type(req.text) == dict or len(argv) == 1:
+        data[q] = argv[1]
+    req = requests.post("http://0.0.0.0:5000/search_user", data)
+    json_req = req.json()
+    if type(json_req) == dict and len(json_req) > 0:
+        print("[{}] {}: {}".format(json_req['id'], json_req['name']))
+    elif type(json_req) == dict and len(json_req) == 0:
         print("No result")
     else:
         print("Not a valid JSON")
