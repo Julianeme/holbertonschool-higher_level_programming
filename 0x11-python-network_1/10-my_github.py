@@ -8,6 +8,10 @@ import requests
 from sys import argv
 
 if __name__ == "__main__":
-    id = requests.get('https://api.github.com/user', auth=(argv[1], argv[2]))
-    id_json = id.json()
-    print(id_json['id'])
+    try:
+        id = requests.get(
+            'https://api.github.com/user', auth=(argv[1], argv[2]))
+        id_json = id.json()
+        print(id_json['id'])
+    except:
+        print("None")
