@@ -3,6 +3,7 @@
    script that takes your GitHub credentials (username and password)
    and uses the GitHub API to display your id
 """
+import requests.auth
 import requests
 from sys import argv
 
