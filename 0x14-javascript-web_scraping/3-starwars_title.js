@@ -8,6 +8,8 @@ request(rUrl, function (err, res, body) {
   if (err) {
     return console.log('Error: ', err);
   } else if (res.statusCode === 200) {
-    console.log('%s', JSON.parse(body).title);
+    const chars = JSON.parse(body).title;
+    for (character of chars){
+      console.log("character is: %s", character)}
   }
 });
