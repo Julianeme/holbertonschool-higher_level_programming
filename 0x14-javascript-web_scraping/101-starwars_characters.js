@@ -9,8 +9,8 @@ request(rUrl, function (err, res, body) {
     return console.log('Error: ', err);
   } else if (res.statusCode === 200) {
     res = JSON.parse(body).characters;
-    for (const stars of res) {
-      request(stars, function (err, res, body) {
+    for (const stars in res) {
+      request(res[stars], function (err, res, body) {
         if (err) {
           return console.log('Error: ', err);
         } else {
